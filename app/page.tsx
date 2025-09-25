@@ -8,7 +8,7 @@ import Spline from '@splinetool/react-spline/next';
 export default function HomePage() {
   return (
     // Main container for background layers.
-    <div className="relative h-screen bg-[#0c021d] overflow-hidden">
+    <div className="relative min-h-screen bg-[#0c021d] overflow-hidden">
       
       {/* Backgrounds are now managed at z-index 0, behind all content. */}
       <BackgroundGradientAnimation
@@ -47,7 +47,7 @@ export default function HomePage() {
         - `justify-between` creates space between the two main sections.
         - `overflow-hidden` is applied here to contain the decorative elements without affecting the Spline model.
       */}
-      <main className="relative z-10 flex flex-col h-screen items-center justify-between p-4 md:p-8 lg:p-12 overflow-hidden">
+      <main className="relative z-10 flex flex-col min-h-screen items-center justify-between p-4 md:p-8 lg:p-12 overflow-hidden">
         
         {/* Header Section (Logo & Text) */}
         <div className="flex flex-col items-center text-center pt-16 flex-shrink-0">
@@ -115,7 +115,7 @@ export default function HomePage() {
             
             <Link
               href="/contact"
-              className="block w-full bg-black text-white font-semibold py-4 px-6 rounded-full text-center transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:bg-gray-900 text-sm md:text-base relative group overflow-hidden"
+              className="block max-w-md mx-auto bg-black text-white font-semibold py-4 px-6 rounded-full text-center transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:bg-gray-900 text-sm md:text-base relative group overflow-hidden"
               style={{
                 background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #8955ff, #5695fb) border-box',
                 border: '2px solid transparent'
