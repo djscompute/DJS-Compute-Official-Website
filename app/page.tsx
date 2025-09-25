@@ -103,11 +103,14 @@ export default function HomePage() {
               - It's positioned absolutely above the button.
               - The problematic `marginTop` style was removed from the Spline component itself.
               - Hidden on small devices, visible only on lg and above
+              - Wrapped in overflow-hidden container to hide watermark at bottom
             */}
-            <div className="hidden lg:block absolute -bottom-5 left-1/2 -translate-x-1/2 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] pointer-events-none">
-              <Spline
-                scene="https://prod.spline.design/5vOoyHHHXPV6NNnI/scene.splinecode"
-              />
+            <div className="hidden lg:block absolute -bottom-4 left-1/2 -translate-x-1/2 w-[300px] h-[280px] sm:w-[350px] sm:h-[320px] overflow-hidden pointer-events-none">
+              <div className="w-full h-[350px] sm:h-[400px]">
+                <Spline
+                  scene="https://prod.spline.design/5vOoyHHHXPV6NNnI/scene.splinecode"
+                />
+              </div>
             </div>
             
             <Link
