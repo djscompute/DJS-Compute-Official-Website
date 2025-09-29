@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { Project } from "../../page";
+import { Project } from "../page";
 
 interface ProjectContainerProps {
   project: Project;

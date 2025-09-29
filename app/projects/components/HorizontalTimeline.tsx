@@ -49,11 +49,13 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
               {projects.map((project, index) => {
                 const start = index * sectionDuration;
                 const end = start + sectionDuration;
-                const progress = useTransform(
+                const progressMV = useTransform(
                   scrollYProgress,
                   [start, end],
                   [0, 1]
                 );
+                // Extract the current value from the MotionValue
+                const progress = progressMV.get();
                 return <TimelineNode key={project.id} progress={progress} />;
               })}
             </div>
