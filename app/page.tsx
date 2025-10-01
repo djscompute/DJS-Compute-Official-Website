@@ -4,12 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Spline from '@splinetool/react-spline/next';
+import { TrustedBySection } from "./components/landing/trusted-by-section";
+import { ServicesSection } from "./components/landing/services-section";
+import { CTASection } from "./components/landing/cta-section";
 
 export default function HomePage() {
   return (
     // Main container for background layers.
     <div className="relative min-h-screen bg-[#0c021d] overflow-hidden">
-      
+
       {/* Backgrounds are now managed at z-index 0, behind all content. */}
       <BackgroundGradientAnimation
         gradientBackgroundStart="rgb(20, 20, 40)"
@@ -48,7 +51,7 @@ export default function HomePage() {
         - `overflow-hidden` is applied here to contain the decorative elements without affecting the Spline model.
       */}
       <main className="relative z-10 flex flex-col min-h-screen items-center justify-between p-4 md:p-8 lg:p-12 overflow-hidden">
-        
+
         {/* Header Section (Logo & Text) */}
         <div className="flex flex-col items-center text-center pt-16 flex-shrink-0">
           <Image
@@ -79,7 +82,7 @@ export default function HomePage() {
 
         {/* Bottom Cards Section */}
         <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-4 lg:gap-8 items-end flex-shrink-0 pb-4">
-          
+
           {/* Description Card */}
           <div className="flex-1 bg-black/20 backdrop-blur-md border border-white/10 rounded-2xl p-6 space-y-4">
             <h2 className="text-lg md:text-xl font-bold text-white">Discover. Develop. Deliver.</h2>
@@ -112,7 +115,7 @@ export default function HomePage() {
                 />
               </div>
             </div>
-            
+
             <Link
               href="/contact"
               className="block max-w-md mx-auto bg-black text-white font-semibold py-4 px-6 rounded-full text-center transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:bg-gray-900 text-sm md:text-base relative group overflow-hidden"
@@ -130,6 +133,8 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+        <TrustedBySection />
+        <CTASection />
     </div>
   );
 }
