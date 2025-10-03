@@ -17,8 +17,12 @@ export function TrustedBySection() {
         <section style={{
             backgroundImage: "url('/landing/trusted-by-bg.png')",
         }} className="relative py-16 overflow-hidden w-full bg-cover bg-center bg-no-repeat">
-            {/* Grid dot background effect */}
-            <div className="absolute inset-0 opacity-40 w-full">
+            {/* Top gradient overlay for seamless transition */}
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0c021d] to-transparent z-10" />
+            {/* Bottom gradient overlay for seamless transition */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1a0a3e] to-transparent z-10" />
+            {/* Grid dot background effect - hidden on small screens */}
+            <div className="absolute inset-0 opacity-40 w-full hidden lg:block">
                 <div className="grid grid-cols-20 gap-4 h-full w-full p-4 pl-15">
                     {[...Array(400)].map((_, i) => (
                         <div
@@ -33,7 +37,11 @@ export function TrustedBySection() {
             </div>
             <ServicesSection />
 
-            <div className="relative z-10">
+            {/* Soft glow effects for smooth transitions */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-blue-500/10 blur-3xl" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-purple-500/10 blur-3xl" />
+            
+            <div className="relative z-20">
                 {/* Trusted by heading */}
                 <div className="text-center mb-8">
                     <h2 className="text-4xl md:text-5xl font-bold"><span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Trusted </span><span className="text-white">by</span></h2>
@@ -41,7 +49,7 @@ export function TrustedBySection() {
 
                 {/* Infinite scrolling marquee */}
                 <div className="mb-16">
-                    <InfiniteMovingCards items={marqueeItems} direction="right" speed="fast" pauseOnHover={false} />
+                    <InfiniteMovingCards items={marqueeItems} direction="right" speed="fast" pauseOnHover={true} />
                 </div>
 
                 {/* Why choose us section */}

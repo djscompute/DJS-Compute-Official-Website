@@ -48,7 +48,7 @@ export function ServicesSection() {
               }}
             >
               <div
-                className="bg-gradient-to-b from-[#0b001c] to-[#2c104d] text-white p-8 rounded-3xl h-full flex flex-col min-h-[420px]"
+                className="bg-gradient-to-b from-[#0b001c] via-[#1a1a2e] to-[#2c104d] text-white p-8 rounded-3xl h-full flex flex-col min-h-[420px]"
                 style={{
                   clipPath: 'polygon(0% 0%, calc(100% - 40px) 0%, 100% 40px, 100% 100%, 0% 100%)',
                 }}

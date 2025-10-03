@@ -7,9 +7,37 @@ export function CTASection() {
     const [email] = useState("info.djscompute@gmail.com")
     // Generate star positions on client only
     const [stars, setStars] = useState<Array<{left: string; top: string; opacity: number}>>([])
+    const [copied, setCopied] = useState(false)
 
-    const handleCopy = () => {
-        navigator.clipboard.writeText(email)
+    const handleCopy = async () => {
+        if (navigator.clipboard && window.isSecureContext) {
+            try {
+                await navigator.clipboard.writeText(email)
+                setCopied(true)
+                setTimeout(() => setCopied(false), 1500)
+            } catch (err) {
+                setCopied(false)
+                alert("Failed to copy email. Please copy manually.")
+            }
+        } else {
+            // fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = email;
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                setCopied(true);
+                setTimeout(() => setCopied(false), 1500);
+            } catch (err) {
+                setCopied(false);
+                alert("Failed to copy email. Please copy manually.");
+            }
+            document.body.removeChild(textarea);
+        }
     }
 
     useEffect(() => {
@@ -23,17 +51,22 @@ export function CTASection() {
 
     return (
         <section className="relative bg-gradient-to-b from-[#1a0a3e] via-[#0a1628] to-[#1a0a3e] py-20 px-4 overflow-hidden">
-            {/* Gradient glow effects */}
+            {/* Top gradient overlay for seamless transition */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0a1628] to-transparent z-10" />
+            {/* Enhanced gradient glow effects for seamless transitions */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-[120px]" />
             <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-[120px]" />
             <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-pink-500/20 rounded-full blur-[120px]" />
+            {/* Soft transition glows */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-24 bg-gradient-to-b from-blue-500/5 to-transparent" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-24 bg-gradient-to-t from-purple-500/5 to-transparent" />
 
 
 
             <div className="relative z-10 max-w-5xl mx-auto">
-                <div style={{ backgroundImage: "url('/landing/ready-to-collaborate.png')" }} className="backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/10 min-h-[600px] bg-cover bg-center bg-no-repeat flex flex-col justify-center">
+                <div style={{ backgroundImage: "url('/landing/ready-to-collaborate.png')" }} className="backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/10 min-h-[600px] bg-cover bg-center bg-no-repeat flex flex-col justify-center relative">
                     {/* Starry background generated client-side */}
-                    <div className="absolute inset-0 animate-pulse opacity-30">
+                    <div className="absolute inset-0 animate-pulse opacity-30 z-0">
                         {stars.map((star, i) => (
                             <div
                                 key={i}
@@ -43,7 +76,7 @@ export function CTASection() {
                         ))}
                     </div>
                     {/* Content */}
-                    <div className="text-center">
+                    <div className="text-center relative z-10">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                             Ready to Collaborate on Your Next Project?
                         </h2>
@@ -63,9 +96,9 @@ export function CTASection() {
                             </div>
                             <Button
                                 onClick={handleCopy}
-                                className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-6 rounded-full font-medium transition-colors"
+                                className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-6 rounded-full font-medium transition-colors cursor-pointer"
                             >
-                                Copy
+                                {copied ? "Copied!" : "Copy"}
                             </Button>
                         </div>
 

@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin } from 'lucide-react';
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 
 // The main Footer component
 const Footer = () => {
@@ -7,16 +7,19 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-8">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           
-          {/* Left Section: Social Icons */}
+          {/* Left Section: Social Icons & Contact */}
           <div className="flex flex-col justify-center items-center md:items-start space-y-4">
-            <a href="#" aria-label="LinkedIn" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/50">
+            <a href="https://www.linkedin.com/company/djscompute/" aria-label="LinkedIn" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/50">
               <Linkedin size={24} className='inline mr-2' /> LinkedIn
             </a>
-            <a href="#" aria-label="Instagram" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-pink-500/50">
+            <a href="https://www.instagram.com/djscompute/" aria-label="Instagram" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-pink-500/50">
               <Instagram size={24} className='inline mr-2' /> Instagram
             </a>
             <a href="#" aria-label="GitHub" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-purple-500/50">
               <Github size={24} className='inline mr-2'/> GitHub
+            </a>
+            <a href="mailto:info.djscompute@gmail.com" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-green-500/50">
+              <Mail size={24} className='inline mr-2' /> Email
             </a>
           </div>
 
