@@ -89,11 +89,11 @@ export default function AboutPage() {
           <div className="bg-gradient-to-br from-slate-800/40 to-teal-900/30 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[40px] p-8 sm:p-10 md:p-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent to-teal-600/10"></div>
 
-            <img 
-              src="/about/text-infinite.png" 
-              alt="infinity_symbol" 
+            <img
+              src="/about/text-infinite.png"
+              alt="infinity_symbol"
               className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] mx-auto md:mx-0"
-            /> 
+            />
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6 relative z-10 pt-6 md:pt-10">
               Our Mission
@@ -106,6 +106,12 @@ export default function AboutPage() {
           </div>
         </div>
 
+        <img
+          src="/about/about_shapes.png"
+          alt="geometric image"
+          className="scale-135"
+        />
+
         {/* What We Do Section */}
         <div className="mb-8 md:mb-10">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 md:mb-10">
@@ -114,68 +120,109 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
             {/* Card 1 - Workshop & Hackathons */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent"></div>
-              <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
+            <div className="bg-gradient-to-br from-[#1a0a2e]/40 to-[#0f0520]/40 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-transparent"></div>
+
+              {/* Title */}
+              <h3 className="text-base sm:text-lg md:text-xl font-normal text-white/70 mb-6 sm:mb-8 md:mb-12 relative z-10 tracking-wider uppercase">
                 WORKSHOP & HACKATHONS
               </h3>
-              <p className="text-white/70 text-sm sm:text-base mb-4 md:mb-6 relative z-10 leading-relaxed">
-                Gain firsthand knowledge from top AI experts and pioneers
-                shaping the industry.
-              </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-500/20 leading-none relative z-0 -mb-8 md:-mb-12">
-                01
+
+              {/* Content Row */}
+              <div className="relative z-10 flex flex-col sm:flex-row items-start justify-between gap-4">
+                {/* Large Number */}
+                <div className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[160px] font-bold text-[#2563eb] leading-none flex-shrink-0">
+                  01
+                </div>
+
+                {/* Description */}
+                <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-[280px] pt-0 sm:pt-4 md:pt-8">
+                  Gain firsthand knowledge from top AI experts and pioneers
+                  shaping the industry.
+                </p>
               </div>
             </div>
 
             {/* Card 2 - Project Development */}
-            <div className="bg-gradient-to-br from-blue-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent"></div>
-              <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
-                PROJECT DEVELOPMENT &<br />MENTORSHIP
+            <div className="bg-gradient-to-br from-[#0a1628]/40 to-[#050a18]/40 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-transparent"></div>
+
+              {/* Title */}
+              <h3 className="text-base sm:text-lg md:text-xl font-normal text-white/70 mb-6 sm:mb-8 md:mb-12 relative z-10 tracking-wider uppercase">
+                PROJECT DEVELOPMENT &<br />
+                MENTORSHIP
               </h3>
-              <p className="text-white/70 text-sm sm:text-base mb-4 md:mb-6 relative z-10 leading-relaxed">
-                Participate in interactive workshops, live demos, and deep-dive
-                sessions to sharpen your skills.
-              </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-400/20 leading-none relative z-0 -mb-8 md:-mb-12">
-                02
+
+              {/* Content Row */}
+              <div className="relative z-10 flex flex-col sm:flex-row items-start justify-between gap-4">
+                {/* Large Number */}
+                <div className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[160px] font-bold text-[#2563eb] leading-none flex-shrink-0">
+                  02
+                </div>
+
+                {/* Description */}
+                <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-[280px] pt-0 sm:pt-4 md:pt-8">
+                  Participate in interactive workshops, live demos, and
+                  deep-dive sessions to sharpen your skills.
+                </p>
               </div>
             </div>
 
             {/* Card 3 - Coding Competitions */}
-            <div className="bg-gradient-to-br from-slate-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-700/10 to-transparent"></div>
-              <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
-                CODING COMPETITIONS &<br />CHALLENGES
+            <div className="bg-gradient-to-br from-[#0f0a1a]/40 to-[#050208]/40 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-800/20 to-transparent"></div>
+
+              {/* Title */}
+              <h3 className="text-base sm:text-lg md:text-xl font-normal text-white/70 mb-6 sm:mb-8 md:mb-12 relative z-10 tracking-wider uppercase text-right">
+                CODING COMPETITIONS &<br />
+                CHALLENGES
               </h3>
-              <p className="text-white/70 text-sm sm:text-base mb-4 md:mb-6 relative z-10 leading-relaxed">
-                Connect with AI leaders, investors, startups, and fellow
-                professionals at curated networking events.
-              </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-500/20 leading-none relative z-0 -mb-8 md:-mb-12">
-                03
+
+              {/* Content Row */}
+              <div className="relative z-10 flex flex-col sm:flex-row items-start justify-between gap-4">
+                {/* Description */}
+                <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-[280px] pt-0 sm:pt-4 md:pt-8">
+                  Connect with AI leaders, investors, startups, and fellow
+                  professionals at curated networking events.
+                </p>
+
+                {/* Large Number */}
+                <div className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[160px] font-bold text-[#2563eb] leading-none flex-shrink-0 ml-auto sm:ml-0">
+                  03
+                </div>
               </div>
             </div>
 
             {/* Card 4 - Tech Talks */}
-            <div className="bg-gradient-to-br from-teal-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-600/10 to-transparent"></div>
-              <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
-                TECH TALKS &<br />KNOWLEDGE-SHARING<br />SESSIONS
+            <div className="bg-gradient-to-br from-[#0a1820]/40 to-[#040810]/40 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 to-transparent"></div>
+
+              {/* Title */}
+              <h3 className="text-base sm:text-lg md:text-xl font-normal text-white/70 mb-6 sm:mb-8 md:mb-12 relative z-10 tracking-wider uppercase text-right">
+                TECH TALKS &<br />
+                KNOWLEDGE-SHARING
+                <br />
+                SESSIONS
               </h3>
-              <p className="text-white/70 text-sm sm:text-base mb-4 md:mb-6 relative z-10 leading-relaxed">
-                Explore groundbreaking AI solutions, from emerging startups to
-                tech giants redefining the future.
-              </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-400/20 leading-none relative z-0 -mb-8 md:-mb-12">
-                04
+
+              {/* Content Row */}
+              <div className="relative z-10 flex flex-col sm:flex-row items-start justify-between gap-4">
+                {/* Description */}
+                <p className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-[280px] pt-0 sm:pt-4 md:pt-8">
+                  Explore groundbreaking AI solutions, from emerging startups to
+                  tech giants redefining the future.
+                </p>
+
+                {/* Large Number */}
+                <div className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[160px] font-bold text-[#2563eb] leading-none flex-shrink-0 ml-auto sm:ml-0">
+                  04
+                </div>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <CTASection/>
+      <CTASection />
     </div>
   );
 }
