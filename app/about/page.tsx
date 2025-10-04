@@ -23,6 +23,13 @@ export default function AboutPage() {
 
       {/* Navbar */}
       <Navbar />
+      <div
+        className="fixed inset-0 z-0 opacity-80 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/projects/project_bg.png')",
+          mixBlendMode: "overlay",
+        }}
+      />
 
       {/* Background Blur Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
