@@ -68,7 +68,7 @@ export function Navbar() {
           
           {/* Modal Content */}
           <div className="relative z-50 flex flex-col items-center justify-center min-h-screen p-8">
-            <div className="flex flex-col space-y-8 text-center">
+            <div className="flex flex-col space-y-8 text-center w-full animate-slideDown">
               {navItems.map((item, index) => (
                 <Link
                   key={item.name}
