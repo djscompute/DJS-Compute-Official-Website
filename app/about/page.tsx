@@ -112,7 +112,13 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-
+        <div
+          className="bg-cover bg-center bg-no-repeat min-h-[200px] md:min-h-[250px] lg:min-h-[300px] mb-8 md:mb-10 rounded-3xl md:rounded-[40px] overflow-hidden relative"
+          style={{
+            backgroundImage: "url('/about/about_shapes.png')",
+            clipPath: 'inset(0 12.5% 0 12.61%)'
+          }}
+        />
         {/* What We Do Section */}
         <div className="mb-8 md:mb-10">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 md:mb-10">
@@ -121,22 +127,22 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
             {/* Card 1 - Workshop & Hackathons */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+            <div className="bg-gradient-to-br from-purple-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
-                WORKSHOP & HACKATHONS
+                WORKSHOPS & <br /> HACKATHONS
               </h3>
               <p className="text-white/70 text-sm sm:text-base mb-4 md:mb-6 relative z-10 leading-relaxed">
                 Gain firsthand knowledge from top AI experts and pioneers
                 shaping the industry.
               </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-500/20 leading-none relative z-0 -mb-8 md:-mb-12">
+              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold leading-none relative z-0 -mb-8 md:-mb-12 bg-gradient-to-b from-[#001a3a] via-[#0147FF] to-[#6ea8ff] text-transparent bg-clip-text">
                 01
               </div>
             </div>
 
             {/* Card 2 - Project Development */}
-            <div className="bg-gradient-to-br from-blue-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+            <div className="bg-gradient-to-br from-blue-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
                 PROJECT DEVELOPMENT &<br />MENTORSHIP
@@ -145,28 +151,28 @@ export default function AboutPage() {
                 Participate in interactive workshops, live demos, and deep-dive
                 sessions to sharpen your skills.
               </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-400/20 leading-none relative z-0 -mb-8 md:-mb-12">
+              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold leading-none relative z-0 -mb-8 md:-mb-12 bg-gradient-to-b from-[#001a3a] via-[#0147FF] to-[#6ea8ff] text-transparent bg-clip-text">
                 02
               </div>
             </div>
 
             {/* Card 3 - Coding Competitions */}
-            <div className="bg-gradient-to-br from-slate-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+            <div className="bg-gradient-to-br from-slate-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
               <div className="absolute inset-0 bg-gradient-to-br from-slate-700/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
-                CODING COMPETITIONS &<br />CHALLENGES
+                CODING <br /> COMPETITIONS &<br />CHALLENGES
               </h3>
               <p className="text-white/70 text-sm sm:text-base mb-4 md:mb-6 relative z-10 leading-relaxed">
                 Connect with AI leaders, investors, startups, and fellow
                 professionals at curated networking events.
               </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-500/20 leading-none relative z-0 -mb-8 md:-mb-12">
+              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold leading-none relative z-0 -mb-8 md:-mb-12 bg-gradient-to-b from-[#001a3a] via-[#0147FF] to-[#6ea8ff] text-transparent bg-clip-text">
                 03
               </div>
             </div>
 
             {/* Card 4 - Tech Talks */}
-            <div className="bg-gradient-to-br from-teal-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+            <div className="bg-gradient-to-br from-teal-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
               <div className="absolute inset-0 bg-gradient-to-br from-teal-600/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
                 TECH TALKS &<br />KNOWLEDGE-SHARING<br />SESSIONS
@@ -175,7 +181,7 @@ export default function AboutPage() {
                 Explore groundbreaking AI solutions, from emerging startups to
                 tech giants redefining the future.
               </p>
-              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold text-blue-400/20 leading-none relative z-0 -mb-8 md:-mb-12">
+              <div className="text-[120px] sm:text-[150px] md:text-[180px] font-bold leading-none relative z-0 -mb-8 md:-mb-12 bg-gradient-to-b from-[#001a3a] via-[#0147FF] to-[#6ea8ff] text-transparent bg-clip-text">
                 04
               </div>
             </div>
