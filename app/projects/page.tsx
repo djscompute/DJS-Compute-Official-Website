@@ -2,6 +2,7 @@ import { Navbar } from "../components/navbar";
 import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 import HorizontalTimeline from "./components/HorizontalTimeline";
 import FeaturesGrid from "./components/FeaturesGrid";
+import ProjectContainer from "./components/ProjectContainer";
 import { projects as rawProjects } from "./components/ProjectsData";
 
 export type Project = {
@@ -51,7 +52,19 @@ export default function ProjectsPage() {
             </h1>
           </div>
         </main>
-        <HorizontalTimeline projects={projects} />
+
+        {/* Desktop: Horizontal Timeline with scroll effects */}
+        <div className="hidden lg:block">
+          <HorizontalTimeline projects={projects} />
+        </div>
+
+        {/* Mobile/Tablet: Simple vertical stack */}
+        <div className="lg:hidden space-y-12 px-4 pb-16">
+          {projects.map((project) => (
+            <ProjectContainer key={project.id} project={project} />
+          ))}
+        </div>
+
         <FeaturesGrid />
       </div>
     </div>

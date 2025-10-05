@@ -15,18 +15,18 @@ interface ProjectContainerProps {
 
 const ProjectContainer: React.FC<ProjectContainerProps> = ({ project }) => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-8">
-      <div className="flex flex-col lg:flex-row items-start gap-8">
-        {/* Text Content - 70% on large screens */}
-        <div className="text-white space-y-5 text-center lg:text-left lg:basis-[70%]">
-          <h3 className="text-3xl lg:text-4xl font-bold leading-tight">
+    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
+        {/* Text Content - Full width on mobile, 70% on desktop */}
+        <div className="text-white space-y-4 lg:space-y-5 text-left w-full lg:basis-[70%]">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
             {project.title}
           </h3>
-          <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+          <p className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
             {project.description}
           </p>
           {project.bullets && project.bullets.length > 0 && (
-            <ul className="list-disc list-inside text-gray-300 space-y-2 text-sm lg:text-base">
+            <ul className="list-disc list-inside text-gray-300 space-y-1.5 lg:space-y-2 text-xs md:text-sm lg:text-base">
               {project.bullets.map((point, idx) => (
                 <li key={idx}>{point}</li>
               ))}
@@ -37,16 +37,16 @@ const ProjectContainer: React.FC<ProjectContainerProps> = ({ project }) => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-20 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors text-lg font-medium group cursor-pointer"
+              className="relative z-20 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors text-base md:text-lg font-medium group cursor-pointer"
             >
               Visit Site
-              <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
           )}
         </div>
 
-        {/* Image Content - 30% on large screens */}
-        <div className="relative w-full lg:w-auto lg:basis-[30%] space-y-4">
+        {/* Image Content - Full width on mobile, 30% on desktop */}
+        <div className="relative w-full lg:w-auto lg:basis-[30%] space-y-6 md:space-y-5 lg:space-y-4">
           {project.images && project.images.length > 0
             ? project.images.map((imgSrc, idx) => (
                 <div

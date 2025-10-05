@@ -30,9 +30,9 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
     >
       <div className="sticky top-24 flex h-screen flex-col items-start overflow-hidden pt-4">
         {/* Timeline track container with vertical margin */}
-        <div className="w-full h-24 flex items-center justify-center px-12">
+        <div className="w-full h-24 flex items-center justify-center px-4 md:px-8 lg:px-12">
           {/* Enclosed container */}
-          <div className="relative w-full h-20 bg-slate-900/50 border border-slate-700 rounded-full flex items-center px-12">
+          <div className="relative w-full h-20 bg-slate-900/50 border border-slate-700 rounded-full flex items-center px-4 md:px-8 lg:px-12">
             {/* Track Background */}
             <div className="h-1.5 w-full rounded-full bg-neutral-700" />
 
@@ -41,11 +41,11 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
               style={{
                 width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
               }}
-              className="absolute top-1/2 left-12 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-orange-500 via-orange-400 to-transparent"
+              className="absolute top-1/2 left-4 md:left-8 lg:left-12 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-orange-500 via-orange-400 to-transparent"
             />
 
             {/* Nodes */}
-            <div className="absolute inset-0 flex justify-between items-center px-12">
+            <div className="absolute inset-0 flex justify-between items-center px-4 md:px-8 lg:px-12">
               {projects.map((project, index) => {
                 const start = index * sectionDuration;
                 const end = start + sectionDuration;
