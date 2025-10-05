@@ -4,7 +4,7 @@ import { CTASection } from "../components/landing/cta-section";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <div>
       {/* Background Animation */}
       <BackgroundGradientAnimation
         gradientBackgroundStart="rgb(20, 20, 40)"
@@ -96,11 +96,11 @@ export default function AboutPage() {
           <div className="bg-gradient-to-br from-slate-800/40 to-teal-900/30 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[40px] p-8 sm:p-10 md:p-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-transparent to-teal-600/10"></div>
 
-            <img 
-              src="/about/text-infinite.png" 
-              alt="infinity_symbol" 
+            <img
+              src="/about/text-infinite.png"
+              alt="infinity_symbol"
               className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] mx-auto md:mx-0"
-            /> 
+            />
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6 relative z-10 pt-6 md:pt-10">
               Our Mission
@@ -188,7 +188,7 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
-      <CTASection/>
+      <CTASection />
     </div>
   );
 }
