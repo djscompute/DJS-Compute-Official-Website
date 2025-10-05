@@ -127,7 +127,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
             {/* Card 1 - Workshop & Hackathons */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
+            <div className="bg-gradient-to-br from-purple-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
                 WORKSHOPS & <br /> HACKATHONS
@@ -142,7 +142,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 2 - Project Development */}
-            <div className="bg-gradient-to-br from-blue-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
+            <div className="bg-gradient-to-br from-blue-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
                 PROJECT DEVELOPMENT &<br />MENTORSHIP
@@ -157,7 +157,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 3 - Coding Competitions */}
-            <div className="bg-gradient-to-br from-slate-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
+            <div className="bg-gradient-to-br from-slate-900/50 to-purple-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4">
               <div className="absolute inset-0 bg-gradient-to-br from-slate-700/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
                 CODING <br /> COMPETITIONS &<br />CHALLENGES
@@ -172,7 +172,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 4 - Tech Talks */}
-            <div className="bg-gradient-to-br from-teal-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4" style={{clipPath: 'inset(0 0 7% 0)'}}>
+            <div className="bg-gradient-to-br from-teal-900/50 to-blue-950/50 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[35px] p-6 sm:p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all min-h-[260px] md:min-h-[300px] pb-2 md:pb-4">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-600/10 to-transparent"></div>
               <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-3 md:mb-4 relative z-10 tracking-wide">
                 TECH TALKS &<br />KNOWLEDGE-SHARING<br />SESSIONS
