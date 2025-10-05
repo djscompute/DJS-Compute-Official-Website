@@ -50,19 +50,7 @@ export function CTASection() {
     }, [])
 
     return (
-        <section className="relative bg-gradient-to-b from-[#1a0a3e] via-[#0a1628] to-[#1a0a3e] py-20 px-4 overflow-hidden">
-            {/* Top gradient overlay for seamless transition */}
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0a1628] to-transparent z-10" />
-            {/* Enhanced gradient glow effects for seamless transitions */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-[120px]" />
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-[120px]" />
-            <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-pink-500/20 rounded-full blur-[120px]" />
-            {/* Soft transition glows */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-24 bg-gradient-to-b from-blue-500/5 to-transparent" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-24 bg-gradient-to-t from-purple-500/5 to-transparent" />
-
-
-
+        <section className="relative  py-20 px-4 overflow-hidden">
             <div className="relative z-10 max-w-5xl mx-auto">
                 <div style={{ backgroundImage: "url('/landing/ready-to-collaborate.png')" }} className="backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/10 min-h-[600px] bg-cover bg-center bg-no-repeat flex flex-col justify-center relative">
                     {/* Starry background generated client-side */}
