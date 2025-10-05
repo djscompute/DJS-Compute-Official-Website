@@ -4,8 +4,7 @@ import { CTASection } from "../components/landing/cta-section";
 
 export default function AboutPage() {
   return (
-    <div>
-      {/* Background Animation */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       <BackgroundGradientAnimation
         gradientBackgroundStart="rgb(20, 20, 40)"
         gradientBackgroundEnd="rgb(12, 5, 29)"
