@@ -7,8 +7,9 @@ interface TimelineNodeProps {
 }
 
 const TimelineNode: React.FC<TimelineNodeProps> = ({ progress }) => {
-  const scale = (progress || 0) * 0.5 + 0.5; // Scale from 0.5 to 1
-  const opacity = progress || 0;
+  const safeProgress =
+    typeof progress === "number" && !isNaN(progress) ? progress : 0;
+  const scale = safeProgress * 0.5 + 0.5; // Scale from 0.5 to 1
 
   return (
     <div className="relative w-10 h-10 flex items-center justify-center">
@@ -21,23 +22,20 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({ progress }) => {
         <motion.div
           style={{
             scale: typeof scale === "number" && !isNaN(scale) ? scale : 0.5,
-            opacity:
-              typeof opacity === "number" && !isNaN(opacity) ? opacity : 0,
+            opacity: 1,
           }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-orange-400 to-rose-400 shadow-[0_0_18px_rgba(255,100,50,0.7)]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-orange-400 to-rose-400 shadow-[0_0_24px_rgba(255,120,60,0.9)]" />
         </motion.div>
         {/* Soft halo */}
         <motion.div
           style={{
             scale:
               (typeof scale === "number" && !isNaN(scale) ? scale : 0.5) * 1.5,
-            opacity:
-              (typeof opacity === "number" && !isNaN(opacity) ? opacity : 0) *
-              0.5,
+            opacity: Math.max(0.15, safeProgress * 0.5),
           }}
-          className="absolute -inset-2 rounded-full bg-orange-400/20 blur-md"
+          className="absolute -inset-2 rounded-full bg-orange-400/25 blur-md"
         />
       </div>
       {/* Ripple animation */}

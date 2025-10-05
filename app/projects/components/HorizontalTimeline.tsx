@@ -54,9 +54,12 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
                   [start, end],
                   [0, 1]
                 );
-                // Extract the current value from the MotionValue
-                const progress = progressMV.get();
-                return <TimelineNode key={project.id} progress={progress} />;
+                // Ensure nodes are always at least faintly active for visibility
+                const rawProgress = progressMV.get();
+                const nodeProgress = Math.max(0.25, rawProgress);
+                return (
+                  <TimelineNode key={project.id} progress={nodeProgress} />
+                );
               })}
             </div>
           </div>
@@ -70,29 +73,33 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
 
             const isLastProject = index === projects.length - 1;
             const isFirstProject = index === 0;
-            const fadeDuration = sectionDuration * 0.15;
+            const fadeFraction = 0.06; // uniform fade width across all projects
 
             // Animation logic for each project
             let opacityInputRange, opacityOutputRange;
 
             if (isFirstProject) {
-              // First project: visible from start, fade out when second project starts
-              opacityInputRange = [0, end - sectionDuration * 0.3];
-              opacityOutputRange = [1, 0];
-            } else if (isLastProject) {
-              // Last project: fade in when previous project ends, stay visible
+              // Start fully visible, then fade out near the end of its section
               opacityInputRange = [
-                start - sectionDuration * 0.3,
-                start + sectionDuration * 0.5,
+                0,
+                end - sectionDuration * fadeFraction,
+                end + sectionDuration * fadeFraction,
+              ];
+              opacityOutputRange = [1, 1, 0];
+            } else if (isLastProject) {
+              // Fade in with the same width, then stay visible
+              opacityInputRange = [
+                start - sectionDuration * fadeFraction,
+                start + sectionDuration * fadeFraction,
               ];
               opacityOutputRange = [0, 1];
             } else {
-              // Middle projects: fade in and out with proper transitions
+              // Symmetric fade in/out for middle projects
               opacityInputRange = [
-                start - sectionDuration * 0.3,
-                start + sectionDuration * 0.2,
-                end - sectionDuration * 0.2,
-                end + sectionDuration * 0.3,
+                start - sectionDuration * fadeFraction,
+                start + sectionDuration * fadeFraction,
+                end - sectionDuration * fadeFraction,
+                end + sectionDuration * fadeFraction,
               ];
               opacityOutputRange = [0, 1, 1, 0];
             }

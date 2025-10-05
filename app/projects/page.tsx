@@ -2,6 +2,7 @@ import { Navbar } from "../components/navbar";
 import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 import HorizontalTimeline from "./components/HorizontalTimeline";
 import FeaturesGrid from "./components/FeaturesGrid";
+import { projects as rawProjects } from "./components/ProjectsData";
 
 export type Project = {
   id: number;
@@ -11,44 +12,8 @@ export type Project = {
   image?: string;
 };
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "SVKM Hall Booking System",
-    description:
-      "A streamline system to manages hall bookings and events for SVKM institution with real-time availability and...",
-    link: "#",
-    image: "/projects/project-1.png",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "Description for project 2.",
-    link: "#",
-    image: "/projects/project-1.png",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "Description for project 3.",
-    link: "#",
-    image: "/projects/project-1.png",
-  },
-  {
-    id: 4,
-    title: "Project 4",
-    description: "Description for project 4.",
-    link: "#",
-    image: "/projects/project-1.png",
-  },
-  {
-    id: 5,
-    title: "Project 5",
-    description: "Description for project 5.",
-    link: "#",
-    image: "/projects/project-1.png",
-  },
-];
+// Type the imported JS data for TS consumers
+const projects: Project[] = rawProjects as unknown as Project[];
 
 export default function ProjectsPage() {
   return (
