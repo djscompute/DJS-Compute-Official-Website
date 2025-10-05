@@ -12,38 +12,85 @@ const Team = () => {
   const allTeamMembers = [
     {
       name: 'Lokesh Sahuji',
-      imageUrl: '/team/Lokesh.jpg',
+      imageUrl: '/team/WebMentors/Lokesh.jpg',
       linkedinUrl: 'https://www.linkedin.com/in/krishnavora/'
     },
     {
       name: 'Ebrahim Gamdiwala',
       imageUrl: '/team/WebMentors/Ebrahim.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/swastik/',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
     },
     {
-      name: 'Ayush Sharma',
-      imageUrl: '/Ayush.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ayush/',
-      instagramUrl: 'https://www.instagram.com/ayush.insta/',
+      name: 'Ayush Patel',
+      imageUrl: '/team/WebMentors/Ayush Patel.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
     },
     {
-      name: 'Ebrahim Ali',
-      imageUrl: '/Ebrahim.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim/',
-      instagramUrl: 'https://www.instagram.com/ebrahim.insta/',
+      name: 'Chhavi Rathod',
+      imageUrl: '/team/WebMentors/Chhavi Rathod.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
     },
-    { name: 'Member 5',  imageUrl: '/Lokesh.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 6', imageUrl: '/aagnya.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 7',  imageUrl: '/lokesh.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 8',imageUrl: '/aagnya.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 9',  imageUrl: '/lokesh.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 10',  imageUrl: '/aagnya.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 11',  imageUrl: '/lokesh.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 12',  imageUrl: '/aagnya.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 13',  imageUrl: '/lokesh.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 14',  imageUrl: '/aagnya.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 15', imageUrl: '/lokesh.jpg', linkedinUrl: '#', instagramUrl: '#' },
-    { name: 'Member 16', imageUrl: '/aagnya.jpg', linkedinUrl: '#', instagramUrl: '#' },
+    {
+      name: 'Aagnya Mistry',
+      imageUrl: '/team/DAMLMentors/Aagnya .jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Megh Dave',
+      imageUrl: '/team/DAMLMentors/Megh Dave.jpg',
+      linkedinUrl: '#',
+    },
+    {
+      name: 'Pranjay Sharma',
+      imageUrl: '/team/DAMLMentors/Pranjay.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Prisha Gupta',
+      imageUrl: '/team/DAMLMentors/Prisha Gupta.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Rohan Gandhi',
+      imageUrl: '/team/DAMLMentors/Rohan Gandhi IMG.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Smayan Kulkarni',
+      imageUrl: '/team/DAMLMentors/Smayan Kulkarni.',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Vedant Shirgaokar',
+      imageUrl: '/team/DAMLMentors/Vedant.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Swastik Chiplunkar',
+      imageUrl: '/team/SocialMediaHeads/Swastik.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Krishna Vora',
+      imageUrl: '/team/SocialMediaHeads/Krishna.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Kirtan Gosalia',
+      imageUrl: '/team/OperationHead/Kirtan.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Aarav Bhardwaj',
+      imageUrl: '/team/OperationHead/AaravBhardwaj.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    {
+      name: 'Tanmay Chaudhari',
+      imageUrl: '/team/OperationHead/Tanmay Chaudhari.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+    },
+    
   ];
 
   const teamSectionsData = useMemo(() => {
