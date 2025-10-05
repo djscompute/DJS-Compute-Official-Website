@@ -113,7 +113,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div
-          className="bg-cover bg-center bg-no-repeat min-h-[200px] md:min-h-[250px] lg:min-h-[300px] mb-8 md:mb-10 rounded-3xl md:rounded-[40px] overflow-hidden relative"
+          className="bg-cover bg-center bg-no-repeat min-h-[200px] md:min-h-[250px] lg:min-h-[300px] mb-8 md:mb-10 rounded-3xl md:rounded-[40px] overflow-hidden relative scale-114"
           style={{
             backgroundImage: "url('/about/about_shapes.png')",
             clipPath: 'inset(0 12.5% 0 12.61%)'
