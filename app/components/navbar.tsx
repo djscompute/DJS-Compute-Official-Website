@@ -13,9 +13,8 @@ export function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
+    { name: "Team", href: "/team" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
   ]
 
   const isActive = (href: string) => {
@@ -24,7 +23,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 z-50 w-full md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 md:w-[70%] lg:w-[60%] md:max-w-4xl">
+  <nav className="fixed top-0 left-0 z-50 w-full md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 md:w-[50%] lg:w-[40%] md:max-w-4xl">
         <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-none md:rounded-full px-4 sm:px-6 py-3 shadow-2xl shadow-purple-900/50 drop-shadow-md">
           <div className="flex items-center justify-center md:justify-between">
             

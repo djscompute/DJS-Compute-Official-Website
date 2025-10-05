@@ -6,7 +6,7 @@ export default function ServicesPage() {
       <Navbar />
       <main className="pt-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-white mb-8">Our Services</h1>
+          <h1 className="text-4xl font-bold text-white mb-8">Our Team</h1>
           <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-2xl p-8">
             <p className="text-white/80 text-lg">
               Coming soon... Discover the comprehensive services and programs we offer to help you excel in technology.
