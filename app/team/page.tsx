@@ -1,107 +1,181 @@
+
 "use client"; // This is important for client-side hooks in App Router
 
-import { useRef, useCallback, useMemo } from "react";
+import { useRef, useCallback, useMemo } from "react"; // Removed useState
 import { Navbar } from "../components/navbar";
 import TeamMemberCard from "./components/TeamMemberCard";
 import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
-import { CornerDownRight } from "lucide-react";
+import { CornerDownRight } from "lucide-react"; // Removed Chevron icons
 
 const Team = () => {
-  const allTeamMembers = [
+  const teamMembersWithRoles = [
     {
       name: 'Lokesh Sahuji',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/WebMentors/Lokesh.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/krishnavora/'
+      linkedinUrl: '#'
     },
     {
       name: 'Ebrahim Gamdiwala',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/WebMentors/Ebrahim.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Ayush Patel',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/WebMentors/Ayush Patel.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Chhavi Rathod',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/WebMentors/Chhavi_Rathod.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Aagnya Mistry',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/DAMLMentors/Aagnya .jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Megh Dave',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/DAMLMentors/Megh Dave.jpg',
       linkedinUrl: '#',
     },
     {
       name: 'Pranjay Sharma',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/DAMLMentors/Pranjay.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Prisha Gupta',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/DAMLMentors/Prisha Gupta.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Rohan Gandhi',
+      role: 'Web & DAML Mentor',
       imageUrl: '/team/DAMLMentors/Rohan Gandhi IMG.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Smayan Kulkarni',
-      imageUrl: '/team/DAMLMentors/Smayan_Kulkarni.png',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      role: 'Web & DAML Mentor',
+      imageUrl: '/team/DAMLMentors/Smayan.jpg',
+      linkedinUrl: '#',
     },
     {
       name: 'Vedant Shirgaokar',
-      imageUrl: '/team/DAMLMentors/Vedant.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      role: 'Web & DAML Mentor', // Member 11, should be alone
+      imageUrl: '/team/DAMLMentors/VedantS.jpg',
+      linkedinUrl: '#',
     },
     {
       name: 'Swastik Chiplunkar',
-      imageUrl: '/team/SocialMediaHeads/Swastik.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      role: 'Social Media Head',
+      imageUrl: '/team/SocialMediaHeads/Swastik.png',
+      linkedinUrl: '#',
     },
     {
       name: 'Krishna Vora',
+      role: 'Social Media Head',
       imageUrl: '/team/SocialMediaHeads/Krishna.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Kirtan Gosalia',
+      role: 'Operation Head',
       imageUrl: '/team/OperationHead/Kirtan.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
-    },
-    {
-      name: 'Aarav Bhardwaj',
-      imageUrl: '/team/OperationHead/AaravBhardwaj.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
     },
     {
       name: 'Tanmay Chaudhari',
+      role: 'Operation Head',
       imageUrl: '/team/OperationHead/Tanmay Chaudhari.jpg',
-      linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
+      linkedinUrl: '#',
+    },
+    {
+      name: 'Aarav Bhardwaj',
+      role: 'Operation Head', // Member 16, should be alone
+      imageUrl: '/team/OperationHead/AaravBhardwaj.jpg',
+      linkedinUrl: '#',
     },
   ];
 
   const teamSectionsData = useMemo(() => {
     const sections = [];
-    for (let i = 0; i < allTeamMembers.length; i += 2) {
-      if (allTeamMembers[i] && allTeamMembers[i + 1]) {
-        sections.push({
-          members: [allTeamMembers[i], allTeamMembers[i + 1]],
-          isReversed: (i / 2) % 2 !== 0,
-        });
+    let tempMembers = [...teamMembersWithRoles];
+
+    const sectionContent = [
+      {
+        heading: "Web Dev Mentors", // 1st Section (index 0)
+        description: ""
+      },
+      {
+        description: "We bring ideas to life on the web through sleek, responsive, and dynamic designs. From concept to code, we ensure every website we craft is fast, intuitive, and built to impress."
+      },
+      {
+        heading: "DAML Mentors", // 3rd Section (index 2)
+        description: ""
+      },
+      {
+        description: "We harness data and intelligent systems to turn numbers into insights and machines into problem-solvers — driving smarter, adaptive, and innovative decisions."
+      },
+      {
+        description: "We explore the potential of intelligent systems - teaching machines to learn, predict, and adapt. Our projects blend innovation with problem-solving to push what's possible with Al."
+      },
+      {
+        description: "We uncover the stories hidden within data through smart visualization and statistical insight. Our work helps drive smarter decisions and meaningful interpretations from numbers that matter."
+      },
+      {
+        heading: "Social Media & Design Heads", // 7th Section (index 6)
+        description: ""
+      },
+      {
+        heading: "Operations Heads", // 8th Section (index 7)
+        description: ""
+      },
+      { description: "We're the team that keeps everything running like clockwork - from planning and logistics to seamless coordination.Every event and initiative you see stands on the foundation we build behind the scenes." },
+      // Add more descriptions if you have more sections than these, otherwise it will use default empty description
+      { description: "" }, // Placeholder for section 9
+      { description: "" }, // Placeholder for section 10
+      { description: "" }, // Placeholder for section 11
+    ];
+
+    let sectionIndex = 0;
+    while (tempMembers.length > 0) {
+      let membersForSection;
+      let isReversed = sectionIndex % 2 !== 0;
+
+      if (
+        tempMembers[0] === teamMembersWithRoles[10] || // Vedant
+        tempMembers[0] === teamMembersWithRoles[15]    // Aarav
+      ) {
+        membersForSection = [tempMembers.shift()!];
+      } else if (tempMembers.length >= 2) {
+        membersForSection = [tempMembers.shift()!, tempMembers.shift()!];
+      } else {
+        membersForSection = [tempMembers.shift()!];
       }
+
+      const currentSectionContent = sectionContent[sectionIndex] || { heading: undefined, description: "" };
+
+      sections.push({
+        members: membersForSection,
+        isReversed: isReversed,
+        ...currentSectionContent,
+        isSingleCard: membersForSection.length === 1
+      });
+      sectionIndex++;
     }
     return sections;
-  }, [allTeamMembers]);
+  }, [teamMembersWithRoles]);
+
 
   const sectionRefs = useRef<Array<React.RefObject<HTMLElement | null>>>([]);
 
@@ -119,8 +193,6 @@ const Team = () => {
     },
     []
   );
-
-  // Removed baseSpotlightStyle and activeSpotlightStyle as they are no longer needed
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden">
@@ -178,16 +250,7 @@ const Team = () => {
 
           <div className="relative z-10">
             {teamSectionsData.map((section, index) => {
-              // No need for Intersection Observer specific to spotlight anymore,
-              // as the hover effect is on the card itself.
-              // However, we keep the ref and observer for future potential scroll-based effects
-              // or if you want to re-introduce something.
               const sectionRefObject = sectionRefs.current[index];
-              // const sectionEntry = useIntersectionObserver(
-              //   sectionRefObject,
-              //   { threshold: 0.4 }
-              // );
-              // const isSectionVisible = !!sectionEntry?.isIntersecting; // Not used for spotlight now
 
               return (
                 <section
@@ -198,24 +261,23 @@ const Team = () => {
                   }`}
                   style={index > 0 ? { marginTop: "80px" } : {}}
                 >
+                  {/* Text Description / Title for the section */}
                   <div
-                    className={`md:w-1/3 text-4xl font-bold leading-relaxed ${
+                    className={`md:w-1/3 text-2xl md:text-2xl font-bold leading-relaxed px-8 sm:px-12 md:px-16 lg:px-20 ${
                       section.isReversed ? "pl-8 text-right" : "pr-8"
-                    }`}
+                    } ${section.heading ? 'text-5xl md:text-6xl' : ''}`}
                   >
-                    We are passionate about creating visually stunning and
-                    functional solutions that communicate effectively
+                    {section.heading && <h2 className="mb-4">{section.heading}</h2>}
+                    <p className={`hidden md:block ${section.heading ? 'text-xl' : ''}`}>
+                      {section.description}
+                    </p>
                   </div>
 
-                  <div className="md:w-2/3 relative flex justify-center gap-8 p-10 pt-0">
-                    {/* Removed Horizontal Light Source */}
-                    {/* Removed Deep Spotlight */}
-
-
-                    <div className="flex gap-8 relative z-20">
-                      <TeamMemberCard {...section.members[0]} />
-                      <TeamMemberCard {...section.members[1]} />
-                    </div>
+                  {/* Wrapper for the cards - now simply stacks on small screens */}
+                  <div className={`md:w-2/3 relative flex flex-col items-center md:flex-row md:flex-wrap justify-center gap-8 p-10 pt-0 `}>
+                    {section.members.map((member, memberIndex) => (
+                      <TeamMemberCard key={memberIndex} {...member} />
+                    ))}
                   </div>
                 </section>
               );
