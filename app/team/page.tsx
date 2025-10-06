@@ -27,7 +27,7 @@ const Team = () => {
     },
     {
       name: 'Chhavi Rathod',
-      imageUrl: '/team/WebMentors/Chhavi Rathod.jpg',
+      imageUrl: '/team/WebMentors/Chhavi_Rathod.jpg',
       linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
     },
     {
@@ -57,7 +57,7 @@ const Team = () => {
     },
     {
       name: 'Smayan Kulkarni',
-      imageUrl: '/team/DAMLMentors/Smayan Kulkarni.',
+      imageUrl: '/team/DAMLMentors/Smayan_Kulkarni.png',
       linkedinUrl: 'https://www.linkedin.com/in/ebrahim-gamdiwala/',
     },
     {
