@@ -78,7 +78,7 @@ const Team = () => {
     {
       name: 'Swastik Chiplunkar',
       role: 'Social Media Head',
-      imageUrl: '/team/SocialMediaHeads/Swastik.png',
+      imageUrl: '/team/SocialMediaHeads/Swastik.jpg',
       linkedinUrl: '#',
     },
     {
