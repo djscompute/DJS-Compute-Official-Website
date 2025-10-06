@@ -92,9 +92,9 @@ export function CTASection() {
 
                         {/* Features */}
                         <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
-                            <span>No credit card required</span>
+                            <span>Send us an email</span>
                             <span className="text-gray-600">✦</span>
-                            <span>14-days free trial</span>
+                            <span>We’ll set your ideas sail</span>
                         </div>
                     </div>
                 </div>
