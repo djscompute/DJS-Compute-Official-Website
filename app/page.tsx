@@ -7,6 +7,7 @@ import Spline from '@splinetool/react-spline/next';
 import { TrustedBySection } from "./components/landing/trusted-by-section";
 import { ServicesSection } from "./components/landing/services-section";
 import { CTASection } from "./components/landing/cta-section";
+import { ScrollToCtaButton } from "./components/ui/ScrollToCtaButton";
 
 export default function HomePage() {
   return (
@@ -116,20 +117,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <Link
-              href="/contact"
-              className="block max-w-md mx-auto bg-black text-white font-semibold py-4 px-6 rounded-full text-center transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:bg-gray-900 text-sm md:text-base relative group overflow-hidden"
-              style={{
-                background: 'linear-gradient(black, black) padding-box, linear-gradient(45deg, #8955ff, #5695fb) border-box',
-                border: '2px solid transparent'
-              }}
-            >
-              <span className="relative z-10">Request a Consultation</span>
-              {/* Gradient border that disappears on hover */}
-              <div className="absolute inset-0 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              {/* Existing hover gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
-            </Link>
+            <ScrollToCtaButton />
           </div>
         </div>
         
@@ -137,7 +125,10 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a1628] to-transparent z-20 pointer-events-none" />
       </main>
         <TrustedBySection />
-        <CTASection />
+        {/* add id so the button can scroll to this section */}
+        <div id="cta-section-root" tabIndex={-1}>
+          <CTASection />
+        </div>
     </div>
   );
 }
