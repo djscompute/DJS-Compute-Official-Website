@@ -3,19 +3,29 @@ import { MoveRight } from "lucide-react"
 export function ServicesSection() {
   const services = [
     {
-      title: "Personal Information removal",
-      description:
-        "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    },
-    {
-      title: "AI-Powered SEO Optimization",
-      description:
-        "Boost your online visibility and rank higher with our intelligent SEO strategies and automation tools.",
-    },
-    {
       title: "Custom Web Development",
       description:
-        "From sleek landing pages to complex web applications, we build solutions that perform and impress.",
+        "We create responsive and reliable websites that align with specific project requirements. Our approach focuses on clean design, efficient architecture, and the use of modern frameworks to ensure long-term scalability and maintainability.",
+    },
+    {
+      title: "AI Integration",
+      description:
+        "We develop and integrate AI-driven systems that improve efficiency and decision-making. Our work includes data-based insights, intelligent automation, and adaptive features that enhance overall functionality.",
+    },
+    {
+      title: "App Development",
+      description:
+        "We build mobile applications with an emphasis on performance, stability, and user experience. Each project is developed with attention to practical usability, ensuring smooth operation across various devices and platforms.",
+    },
+    {
+      title: "Full Stack Development",
+      description:
+        "We handle complete web development processes, from interface design to server-side logic. By combining frontend and backend expertise, we deliver cohesive systems that are efficient, secure, and easy to manage.",
+    },
+    {
+      title: "DevOps & Cloud Solutions",
+      description:
+        "We focus on improving collaboration between development and operations through automation, continuous integration, and optimized deployment pipelines. This approach supports faster delivery, reduced errors, and consistent performance across environments.",
     },
   ]
 
@@ -36,12 +46,12 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Service Cards (horizontal scroll on all sizes) */}
+        <div className="flex gap-8 overflow-x-auto hide-scrollbar py-2 snap-x snap-mandatory">
           {services.map((service, index) => (
             <div
               key={index}
-              className="rounded-3xl p-[1.5px] transition-all duration-300 ease-in-out hover:scale-[1.03] shadow-lg shadow-black/40 hover:shadow-2xl hover:shadow-fuchsia-500/50"
+              className="rounded-3xl p-[1.5px] transition-all duration-300 ease-in-out hover:scale-[1.03] shadow-lg shadow-black/40 hover:shadow-2xl hover:shadow-fuchsia-500/50 min-w-[300px] sm:min-w-[340px] snap-start"
               style={{
                 background: 'linear-gradient(120deg, #c026d3, #8b5cf6, #3b82f6)',
                 clipPath: 'polygon(0% 0%, calc(100% - 40px) 0%, 100% 40px, 100% 100%, 0% 100%)',

@@ -19,7 +19,7 @@ const Team = () => {
       name: 'Ebrahim Gamdiwala',
       role: 'Web & DAML Mentor',
       imageUrl: '/team/WebMentors/Ebrahim.jpg',
-      linkedinUrl: '#',
+      linkedinUrl: 'https://linkedin.com/in/ebrahim-gamdiwala/',
     },
     {
       name: 'Ayush Patel',
