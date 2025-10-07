@@ -93,7 +93,7 @@ const Team = () => {
       {
         name: 'Kirtan Gosalia',
         role: 'Operation Head',
-        imageUrl: '/team/OperationHead/Kirtan.jpg',
+        imageUrl: '/team/OperationHead/kirtan.jpg',
         linkedinUrl: '#',
       },
       {
