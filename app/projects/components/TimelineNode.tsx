@@ -3,13 +3,13 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface TimelineNodeProps {
-  progress: number; // 0 to 1, where 1 is fully active
+  progress: number; // numeric progress 0..1
 }
 
 const TimelineNode: React.FC<TimelineNodeProps> = ({ progress }) => {
-  const safeProgress =
-    typeof progress === "number" && !isNaN(progress) ? progress : 0;
+  const safeProgress = typeof progress === "number" && !isNaN(progress) ? progress : 0;
   const scale = safeProgress * 0.5 + 0.5; // Scale from 0.5 to 1
+  const haloOpacity = Math.max(0.15, safeProgress * 0.5);
 
   return (
     <div className="relative w-10 h-10 flex items-center justify-center">
@@ -21,7 +21,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({ progress }) => {
         {/* Inner glowing core */}
         <motion.div
           style={{
-            scale: typeof scale === "number" && !isNaN(scale) ? scale : 0.5,
+            scale,
             opacity: 1,
           }}
           className="absolute inset-0 flex items-center justify-center"
@@ -31,9 +31,8 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({ progress }) => {
         {/* Soft halo */}
         <motion.div
           style={{
-            scale:
-              (typeof scale === "number" && !isNaN(scale) ? scale : 0.5) * 1.5,
-            opacity: Math.max(0.15, safeProgress * 0.5),
+            scale: scale * 1.5,
+            opacity: haloOpacity,
           }}
           className="absolute -inset-2 rounded-full bg-orange-400/25 blur-md"
         />
@@ -42,8 +41,8 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({ progress }) => {
       <motion.span
         initial={{ scale: 0, opacity: 0 }}
         animate={{
-          scale: (progress || 0) > 0.5 ? [0.8, 1.3, 1.7] : 0,
-          opacity: (progress || 0) > 0.5 ? [0.35, 0.18, 0] : 0,
+          scale: safeProgress > 0.5 ? [0.8, 1.3, 1.7] : 0,
+          opacity: safeProgress > 0.5 ? [0.35, 0.18, 0] : 0,
         }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-400/30 to-rose-400/30 blur-md"

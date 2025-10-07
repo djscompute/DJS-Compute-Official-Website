@@ -20,37 +20,37 @@ const features: Feature[] = [
     icon: <Shield className="w-8 h-8 text-white" />,
     title: "Secure",
     description:
-      "Configure your infrastructure in your own cloud, using best practices, automatically",
+      "Your project is engineered with enterprise-grade security, resilient architecture, and rigorous data protection to ensure lasting reliability and trust that never wavers.",
   },
   {
     icon: <Search className="w-8 h-8 text-white" />,
     title: "Compliant",
     description:
-      "Get an audit trail of your SDLC from requirements, to development, to testing & deployment.",
+      "Every project is optimized for SEO, accessibility, and global standards, giving your brand unmatched visibility, credibility, and impact where it matters the most.",
   },
   {
     icon: <Code className="w-8 h-8 text-white" />,
-    title: "Developer-native",
+    title: "Code-native",
     description:
-      "Builds and deployments are surfaced intuitively, empowering your team regardless of DevOps experience.",
+      "We build modular, future-ready code that integrates seamlessly with your ecosystem, powering performance, flexibility, and innovation that never slows down.",
   },
   {
     icon: <TrendingUp className="w-8 h-8 text-white" />,
     title: "Scalable",
     description:
-      "Coherence makes sure your cloud is there for your users, and that you are avoiding surprise costs from automation.",
+      "Structured to grow with your ambitions, your project stays fast, stable, and unstoppable as your audience, data, and goals expand.",
   },
   {
     icon: <FileText className="w-8 h-8 text-white" />,
     title: "No Lock-in",
     description:
-      "You can cut off Coherence's access at any time — your infrastructure remains safe in your own cloud.",
+      "You receive complete documentation and full ownership, ensuring absolute transparency and freedom to shape your project, your way.",
   },
   {
     icon: <DollarSign className="w-8 h-8 text-white" />,
     title: "Cost-effective",
     description:
-      "You get back engineering time and optimize your cloud deployments to lower your spend.",
+      "Our strategy blends innovation with efficiency, cutting costs, amplifying results, and turning every investment into lasting growth.",
   },
 ];
 
@@ -60,9 +60,7 @@ const FeaturesGrid: React.FC = () => {
       {/* Header */}
       <div className="text-center mb-12 md:mb-16 lg:mb-20">
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
-          <span className="text-blue-400">
-            Don't build all this stuff yourself.{" "}
-          </span>{" "}
+          <span className="text-blue-400">Do not build all this stuff yourself. </span>
           DJS Compute gets infrastructure work off your roadmap.
         </h2>
       </div>
@@ -126,9 +124,7 @@ const FeaturesGrid: React.FC = () => {
       {/* Call to Action */}
       <div className="text-center">
         <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight pb-8 md:pb-10 lg:pb-12">
-          <span className="text-blue-400">
-            Get back to building your product. {""}
-          </span>
+          <span className="text-blue-400">Get back to building your product.</span>
           Let DJSCompute handle the rest.
         </h3>
       </div>

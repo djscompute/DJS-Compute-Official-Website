@@ -47,7 +47,7 @@ export default function ProjectsPage() {
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mt-19">
               Showcasing Projects that Shape{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-                What's Next
+                What&apos;s Next
               </span>
             </h1>
           </div>

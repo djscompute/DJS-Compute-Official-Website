@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 interface TeamMemberCardProps {
   name: string;
@@ -23,7 +23,7 @@ const TeamMemberCard = ({ name, imageUrl, linkedinUrl }: TeamMemberCardProps) =>
         '--hover-shadow': '0px 0px 30px var(--hover-shadow-color), 0px 0px 60px var(--hover-shadow-color)',
         '--active-shadow': '0px 0px 40px var(--active-shadow-color), 0px 0px 80px var(--active-shadow-color)',
         transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out', // Removed border-color transition
-      }}
+      } as React.CSSProperties}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow = 'var(--hover-shadow)';
       }}

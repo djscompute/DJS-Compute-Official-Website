@@ -23,26 +23,27 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    addAnimation();
-  }, []);
   const [start, setStart] = useState(false);
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
+  useEffect(() => {
+    function addAnimation() {
+      if (containerRef.current && scrollerRef.current) {
+        const scrollerContent = Array.from(scrollerRef.current.children);
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true) as Node;
+          scrollerRef.current?.appendChild(duplicatedItem);
+        });
 
-      getDirection();
-      getSpeed();
-      setStart(true);
+        getDirection();
+        getSpeed();
+        setStart(true);
+      }
     }
-  }
+
+    addAnimation();
+    // run only once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -85,7 +86,7 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-white/10 bg-gradient-to-b from-black/40 to-blue-900/20 backdrop-blur-md px-8 py-6 md:w-[450px]"
             key={item.name}

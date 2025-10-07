@@ -1,5 +1,6 @@
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 import { ServicesSection } from "./services-section"
+import { Shield, Zap, Layers, Key, TrendingUp, Users } from "lucide-react"
 
 export function TrustedBySection() {
     const marqueeItems = [{
@@ -40,7 +41,7 @@ export function TrustedBySection() {
             {/* Soft glow effects for smooth transitions */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-blue-500/10 blur-3xl" />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-purple-500/10 blur-3xl" />
-            
+
             <div className="relative z-20">
                 {/* Trusted by heading */}
                 <div className="text-center mb-8">
@@ -53,18 +54,108 @@ export function TrustedBySection() {
                 </div>
 
                 {/* Why choose us section */}
-                <div className="text-center px-4">
-                    <div className="inline-block mb-4">
-                        <span className="px-4 py-1 bg-yellow-600/20 text-yellow-500 text-sm rounded-full border border-yellow-600/30">
-                            Features
-                        </span>
+                <div className="px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto">
+                        <div className="text-center md:text-left">
+                            <div className="inline-block mb-4">
+                                <span className="px-4 py-1 bg-yellow-600/20 text-yellow-500 text-sm rounded-full border border-yellow-600/30">
+                                    Features
+                                </span>
+                            </div>
+                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                                Why <span className="text-purple-500">choose</span> us?
+                            </h3>
+                            <p className="text-gray-300 text-lg max-w-xl">
+                                Businesses choose COMPUTE because we build dependable products that create long-term value. We focus on secure, maintainable systems that scale with your needs, and we make it simple for your team to own and operate the technology we deliver.
+                            </p>
+                            <div className="mt-6 flex items-center gap-4">
+                                <a className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full hover:bg-white/20 transition" href="/projects">
+                                    <Zap className="w-4 h-4 text-white" />
+                                    See our projects
+                                </a>
+                                <a className="inline-flex items-center gap-2 px-4 py-2 bg-transparent text-white border border-white/10 rounded-full hover:bg-white/5 transition" href="mailto:info.djscompute@gmail.com">
+                                    <Users className="w-4 h-4 text-white" />
+                                    Contact us
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="p-4 rounded-xl bg-black/40 border border-white/6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="p-2 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-md">
+                                            <Shield className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-semibold">Secure & Compliant</h4>
+                                            <p className="text-sm text-gray-300">Security is built in, not bolted on — we follow best practices so your data stays safe.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 rounded-xl bg-black/40 border border-white/6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md">
+                                            <Zap className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-semibold">High Performance</h4>
+                                            <p className="text-sm text-gray-300">Fast, responsive apps and websites that perform well in the real world.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 rounded-xl bg-black/40 border border-white/6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="p-2 bg-gradient-to-br from-green-400 to-cyan-400 rounded-md">
+                                            <Layers className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-semibold">Modular & Maintainable</h4>
+                                            <p className="text-sm text-gray-300">We build modular systems so improvements and scaling are low cost.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 rounded-xl bg-black/40 border border-white/6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="p-2 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-md">
+                                            <Key className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-semibold">Full Ownership</h4>
+                                            <p className="text-sm text-gray-300">We provide complete documentation and handover so you retain full control.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 rounded-xl bg-black/40 border border-white/6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="p-2 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-md">
+                                            <TrendingUp className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-semibold">Cost Efficient</h4>
+                                            <p className="text-sm text-gray-300">We optimize for value — efficient engineering that reduces long-term costs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 rounded-xl bg-black/40 border border-white/6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-500 rounded-md">
+                                            <Users className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-semibold">Reliable Partnership</h4>
+                                            <p className="text-sm text-gray-300">We aim for long-term partnerships and support your product as it grows.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Why <span className="text-purple-500">choose</span> us ?
-                    </h3>
-                    <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                        We are the only service that provides all 3 services as a packaged service
-                    </p>
                 </div>
             </div>
         </section>

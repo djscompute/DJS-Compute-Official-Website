@@ -1,4 +1,7 @@
-import { MoveRight } from "lucide-react"
+"use client"
+
+import { MoveRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { useRef } from "react"
 
 export function ServicesSection() {
   const services = [
@@ -29,6 +32,7 @@ export function ServicesSection() {
     },
   ]
 
+  const containerRef = useRef<HTMLDivElement | null>(null)
   return (
     <section className="relative py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -47,7 +51,33 @@ export function ServicesSection() {
         </div>
 
         {/* Service Cards (horizontal scroll on all sizes) */}
-        <div className="flex gap-8 overflow-x-auto hide-scrollbar py-2 snap-x snap-mandatory">
+        <div className="relative">
+          {/* Left / Right scroll buttons */}
+          <button
+            aria-label="Scroll left"
+            className="absolute left-0 sm:-left-6 md:-left-8 top-1/2 -translate-y-1/2 z-20 bg-[#0147FF] hover:bg-[#0137e6] text-white p-3 rounded-full shadow-lg hidden sm:flex items-center justify-center cursor-pointer"
+            onClick={() => {
+              const el = containerRef.current
+              if (!el) return
+              const amount = Math.round(el.clientWidth * 0.7)
+              el.scrollBy({ left: -amount, behavior: 'smooth' })
+            }}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            aria-label="Scroll right"
+            className="absolute right-0 sm:-right-6 md:-right-8 top-1/2 -translate-y-1/2 z-20 bg-[#0147FF] hover:bg-[#0137e6] text-white p-3 rounded-full shadow-lg hidden sm:flex items-center justify-center cursor-pointer"
+            onClick={() => {
+              const el = containerRef.current
+              if (!el) return
+              const amount = Math.round(el.clientWidth * 0.7)
+              el.scrollBy({ left: amount, behavior: 'smooth' })
+            }}
+          >
+            <ChevronRight size={20} />
+          </button>
+          <div ref={containerRef} className="flex gap-8 overflow-x-auto hide-scrollbar py-2 snap-x snap-mandatory">
           {services.map((service, index) => (
             <div
               key={index}
@@ -74,6 +104,7 @@ export function ServicesSection() {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

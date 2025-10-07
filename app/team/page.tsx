@@ -8,108 +8,110 @@ import { BackgroundGradientAnimation } from "../components/ui/background-gradien
 import { CornerDownRight } from "lucide-react"; // Removed Chevron icons
 
 const Team = () => {
-  const teamMembersWithRoles = [
-    {
-      name: 'Lokesh Sahuji',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/WebMentors/Lokesh.jpg',
-      linkedinUrl: '#'
-    },
-    {
-      name: 'Ebrahim Gamdiwala',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/WebMentors/Ebrahim.jpg',
-      linkedinUrl: 'https://linkedin.com/in/ebrahim-gamdiwala/',
-    },
-    {
-      name: 'Ayush Patel',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/WebMentors/Ayush Patel.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Chhavi Rathod',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/WebMentors/Chhavi_Rathod.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Aagnya Mistry',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/DAMLMentors/Aagnya .jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Megh Dave',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/DAMLMentors/Megh Dave.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Pranjay Sharma',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/DAMLMentors/Pranjay.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Prisha Gupta',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/DAMLMentors/Prisha Gupta.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Rohan Gandhi',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/DAMLMentors/Rohan Gandhi IMG.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Smayan Kulkarni',
-      role: 'Web & DAML Mentor',
-      imageUrl: '/team/DAMLMentors/Smayan.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Vedant Shirgaokar',
-      role: 'Web & DAML Mentor', // Member 11, should be alone
-      imageUrl: '/team/DAMLMentors/VedantS.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Swastik Chiplunkar',
-      role: 'Social Media Head',
-      imageUrl: '/team/SocialMediaHeads/Swastik.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Krishna Vora',
-      role: 'Social Media Head',
-      imageUrl: '/team/SocialMediaHeads/Krishna.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Kirtan Gosalia',
-      role: 'Operation Head',
-      imageUrl: '/team/OperationHead/Kirtan.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Tanmay Chaudhari',
-      role: 'Operation Head',
-      imageUrl: '/team/OperationHead/Tanmay Chaudhari.jpg',
-      linkedinUrl: '#',
-    },
-    {
-      name: 'Aarav Bhardwaj',
-      role: 'Operation Head', // Member 16, should be alone
-      imageUrl: '/team/OperationHead/AaravBhardwaj.jpg',
-      linkedinUrl: '#',
-    },
-  ];
+  // teamMembersWithRoles moved into useMemo below to avoid recreating the array
 
   const teamSectionsData = useMemo(() => {
+    const teamMembersWithRoles = [
+      {
+        name: 'Lokesh Sahuji',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/WebMentors/Lokesh.jpg',
+        linkedinUrl: '#'
+      },
+      {
+        name: 'Ebrahim Gamdiwala',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/WebMentors/Ebrahim.jpg',
+        linkedinUrl: 'https://linkedin.com/in/ebrahim-gamdiwala/',
+      },
+      {
+        name: 'Ayush Patel',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/WebMentors/Ayush Patel.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Chhavi Rathod',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/WebMentors/Chhavi_Rathod.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Aagnya Mistry',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/DAMLMentors/Aagnya .jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Megh Dave',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/DAMLMentors/Megh Dave.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Pranjay Sharma',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/DAMLMentors/Pranjay.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Prisha Gupta',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/DAMLMentors/Prisha Gupta.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Rohan Gandhi',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/DAMLMentors/Rohan Gandhi IMG.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Smayan Kulkarni',
+        role: 'Web & DAML Mentor',
+        imageUrl: '/team/DAMLMentors/Smayan.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Vedant Shirgaokar',
+        role: 'Web & DAML Mentor', // Member 11, should be alone
+        imageUrl: '/team/DAMLMentors/VedantS.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Swastik Chiplunkar',
+        role: 'Social Media Head',
+        imageUrl: '/team/SocialMediaHeads/Swastik.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Krishna Vora',
+        role: 'Social Media Head',
+        imageUrl: '/team/SocialMediaHeads/Krishna.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Kirtan Gosalia',
+        role: 'Operation Head',
+        imageUrl: '/team/OperationHead/Kirtan.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Tanmay Chaudhari',
+        role: 'Operation Head',
+        imageUrl: '/team/OperationHead/Tanmay Chaudhari.jpg',
+        linkedinUrl: '#',
+      },
+      {
+        name: 'Aarav Bhardwaj',
+        role: 'Operation Head', // Member 16, should be alone
+        imageUrl: '/team/OperationHead/AaravBhardwaj.jpg',
+        linkedinUrl: '#',
+      },
+    ];
+
     const sections = [];
-    let tempMembers = [...teamMembersWithRoles];
+    const tempMembers = [...teamMembersWithRoles];
 
     const sectionContent = [
       {
@@ -150,7 +152,7 @@ const Team = () => {
     let sectionIndex = 0;
     while (tempMembers.length > 0) {
       let membersForSection;
-      let isReversed = sectionIndex % 2 !== 0;
+      const isReversed = sectionIndex % 2 !== 0;
 
       if (
         tempMembers[0] === teamMembersWithRoles[10] || // Vedant
@@ -174,7 +176,7 @@ const Team = () => {
       sectionIndex++;
     }
     return sections;
-  }, [teamMembersWithRoles]);
+  }, []);
 
 
   const sectionRefs = useRef<Array<React.RefObject<HTMLElement | null>>>([]);
@@ -250,8 +252,6 @@ const Team = () => {
 
           <div className="relative z-10">
             {teamSectionsData.map((section, index) => {
-              const sectionRefObject = sectionRefs.current[index];
-
               return (
                 <section
                   key={index}

@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+// Image import removed because it's not used
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"

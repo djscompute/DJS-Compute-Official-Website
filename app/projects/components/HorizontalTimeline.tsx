@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef, useEffect, useState } from "react";
+import { motion, useScroll } from "framer-motion";
 import { Project } from "../page";
 import TimelineNode from "./TimelineNode";
 import ProjectContainer from "./ProjectContainer";
@@ -22,6 +22,56 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
 
   const sectionDuration = 1 / projects.length;
 
+  // Keep local scroll value in state so we can compute numeric progress values and re-render
+  const [scroll, setScroll] = useState(() => scrollYProgress.get());
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (v) => setScroll(v));
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
+  const clamp = (v: number, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+  const getRawProgress = (index: number) => {
+    const start = index * sectionDuration;
+    const end = start + sectionDuration;
+    const span = end - start || 1;
+    return clamp((scroll - start) / span, 0, 1);
+  };
+
+  const computeOpacity = (index: number) => {
+    const start = index * sectionDuration;
+    const end = start + sectionDuration;
+    const isLastProject = index === projects.length - 1;
+    const isFirstProject = index === 0;
+    const fadeFraction = 0.06;
+
+    if (isFirstProject) {
+      if (scroll <= end - sectionDuration * fadeFraction) return 1;
+      if (scroll >= end + sectionDuration * fadeFraction) return 0;
+      return 1;
+    }
+
+    if (isLastProject) {
+      const inStart = start - sectionDuration * fadeFraction;
+      const inEnd = start + sectionDuration * fadeFraction;
+      return clamp((scroll - inStart) / (inEnd - inStart), 0, 1);
+    }
+
+    const inStart = start - sectionDuration * fadeFraction;
+    const inEnd = start + sectionDuration * fadeFraction;
+    const outStart = end - sectionDuration * fadeFraction;
+    const outEnd = end + sectionDuration * fadeFraction;
+
+    if (scroll < inStart) return 0;
+    if (scroll >= inStart && scroll < inEnd) {
+      return clamp((scroll - inStart) / (inEnd - inStart), 0, 1);
+    }
+    if (scroll >= inEnd && scroll < outStart) return 1;
+    if (scroll >= outStart && scroll < outEnd) {
+      return 1 - clamp((scroll - outStart) / (outEnd - outStart), 0, 1);
+    }
+    return 0;
+  };
+
   return (
     <section
       ref={targetRef}
@@ -39,7 +89,7 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
             {/* Track Progress */}
             <motion.div
               style={{
-                width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+                width: `${Math.round(Math.max(0, Math.min(1, scroll)) * 100)}%`,
               }}
               className="absolute top-1/2 left-4 md:left-8 lg:left-12 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-orange-500 via-orange-400 to-transparent"
             />
@@ -47,19 +97,9 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
             {/* Nodes */}
             <div className="absolute inset-0 flex justify-between items-center px-4 md:px-8 lg:px-12">
               {projects.map((project, index) => {
-                const start = index * sectionDuration;
-                const end = start + sectionDuration;
-                const progressMV = useTransform(
-                  scrollYProgress,
-                  [start, end],
-                  [0, 1]
-                );
-                // Ensure nodes are always at least faintly active for visibility
-                const rawProgress = progressMV.get();
+                const rawProgress = getRawProgress(index);
                 const nodeProgress = Math.max(0.25, rawProgress);
-                return (
-                  <TimelineNode key={project.id} progress={nodeProgress} />
-                );
+                return <TimelineNode key={project.id} progress={nodeProgress} />;
               })}
             </div>
           </div>
@@ -67,59 +107,15 @@ const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
 
         {/* Project Content */}
         <div className="relative flex-grow w-full">
-          {projects.map((project, index) => {
-            const start = index * sectionDuration;
-            const end = start + sectionDuration;
-
-            const isLastProject = index === projects.length - 1;
-            const isFirstProject = index === 0;
-            const fadeFraction = 0.06; // uniform fade width across all projects
-
-            // Animation logic for each project
-            let opacityInputRange, opacityOutputRange;
-
-            if (isFirstProject) {
-              // Start fully visible, then fade out near the end of its section
-              opacityInputRange = [
-                0,
-                end - sectionDuration * fadeFraction,
-                end + sectionDuration * fadeFraction,
-              ];
-              opacityOutputRange = [1, 1, 0];
-            } else if (isLastProject) {
-              // Fade in with the same width, then stay visible
-              opacityInputRange = [
-                start - sectionDuration * fadeFraction,
-                start + sectionDuration * fadeFraction,
-              ];
-              opacityOutputRange = [0, 1];
-            } else {
-              // Symmetric fade in/out for middle projects
-              opacityInputRange = [
-                start - sectionDuration * fadeFraction,
-                start + sectionDuration * fadeFraction,
-                end - sectionDuration * fadeFraction,
-                end + sectionDuration * fadeFraction,
-              ];
-              opacityOutputRange = [0, 1, 1, 0];
-            }
-
-            const opacity = useTransform(
-              scrollYProgress,
-              opacityInputRange,
-              opacityOutputRange
-            );
-
-            return (
-              <motion.div
-                key={project.id}
-                style={{ opacity }}
-                className="absolute inset-0 flex items-start justify-center pt-16"
-              >
-                <ProjectContainer project={project} />
-              </motion.div>
-            );
-          })}
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              style={{ opacity: computeOpacity(index) }}
+              className="absolute inset-0 flex items-start justify-center pt-16"
+            >
+              <ProjectContainer project={project} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

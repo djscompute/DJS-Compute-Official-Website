@@ -35,19 +35,17 @@ export const BackgroundGradientAnimation = ({
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
 
-  const [curX, setCurX] = useState(0);
-  const [curY, setCurY] = useState(0);
-  const [tgX, setTgX] = useState(0);
-  const [tgY, setTgY] = useState(0);
+  // use refs to avoid stale closures and satisfy hook lint rules
+  const curXRef = useRef(0);
+  const curYRef = useRef(0);
+  const tgXRef = useRef(0);
+  const tgYRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
+
   useEffect(() => {
-    document.body.style.setProperty(
-      "--gradient-background-start",
-      gradientBackgroundStart
-    );
-    document.body.style.setProperty(
-      "--gradient-background-end",
-      gradientBackgroundEnd
-    );
+    // set CSS variables whenever any related prop changes
+    document.body.style.setProperty("--gradient-background-start", gradientBackgroundStart);
+    document.body.style.setProperty("--gradient-background-end", gradientBackgroundEnd);
     document.body.style.setProperty("--first-color", firstColor);
     document.body.style.setProperty("--second-color", secondColor);
     document.body.style.setProperty("--third-color", thirdColor);
@@ -56,28 +54,29 @@ export const BackgroundGradientAnimation = ({
     document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
-  }, []);
+  }, [gradientBackgroundStart, gradientBackgroundEnd, firstColor, secondColor, thirdColor, fourthColor, fifthColor, pointerColor, size, blendingValue]);
 
   useEffect(() => {
-    function move() {
-      if (!interactiveRef.current) {
-        return;
-      }
-      setCurX(curX + (tgX - curX) / 20);
-      setCurY(curY + (tgY - curY) / 20);
-      interactiveRef.current.style.transform = `translate(${Math.round(
-        curX
-      )}px, ${Math.round(curY)}px)`;
+    function step() {
+      if (!interactiveRef.current) return;
+      // lerp towards target
+      curXRef.current = curXRef.current + (tgXRef.current - curXRef.current) / 20;
+      curYRef.current = curYRef.current + (tgYRef.current - curYRef.current) / 20;
+      interactiveRef.current.style.transform = `translate(${Math.round(curXRef.current)}px, ${Math.round(curYRef.current)}px)`;
+      rafRef.current = requestAnimationFrame(step);
     }
 
-    move();
-  }, [tgX, tgY]);
+    rafRef.current = requestAnimationFrame(step);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {
       const rect = interactiveRef.current.getBoundingClientRect();
-      setTgX(event.clientX - rect.left);
-      setTgY(event.clientY - rect.top);
+      tgXRef.current = event.clientX - rect.left;
+      tgYRef.current = event.clientY - rect.top;
     }
   };
 

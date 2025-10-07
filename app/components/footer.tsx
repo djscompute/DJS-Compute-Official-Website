@@ -15,7 +15,7 @@ const Footer = () => {
             <a href="https://www.instagram.com/djscompute/" aria-label="Instagram" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-pink-500/50">
               <Instagram size={24} className='inline mr-2' /> Instagram
             </a>
-            <a href="#" aria-label="GitHub" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-purple-500/50">
+            <a href="https://github.com/djscompute/" aria-label="GitHub" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-purple-500/50">
               <Github size={24} className='inline mr-2'/> GitHub
             </a>
             <a href="mailto:info.djscompute@gmail.com" className="text-neutral-400 hover:text-white hover:scale-110 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-green-500/50">
@@ -25,15 +25,15 @@ const Footer = () => {
 
           {/* Middle Section: Navigation Links */}
           <nav className="flex flex-col justify-center items-center md:items-start space-y-4">
-            <a href="#" className="hover:text-white hover:scale-105 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/30 relative group">
-              <span className="relative z-10">Teams</span>
+            <a href="/team" className="hover:text-white hover:scale-105 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/30 relative group">
+              <span className="relative z-10">Team</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -m-2"></div>
             </a>
-            <a href="#" className="hover:text-white hover:scale-105 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/30 relative group">
+            <a href="/projects" className="hover:text-white hover:scale-105 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/30 relative group">
               <span className="relative z-10">Projects</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -m-2"></div>
             </a>
-            <a href="#" className="hover:text-white hover:scale-105 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/30 relative group">
+            <a href="/about" className="hover:text-white hover:scale-105 transform transition-all duration-300 hover:drop-shadow-lg hover:drop-shadow-blue-500/30 relative group">
               <span className="relative z-10">About Us</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -m-2"></div>
             </a>
