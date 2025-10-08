@@ -3,16 +3,23 @@ import { ServicesSection } from "./services-section"
 import { Shield, Zap, Layers, Key, TrendingUp, Users } from "lucide-react"
 
 export function TrustedBySection() {
-    const marqueeItems = [{
-        quote: "DJS Compute transformed our online presence with their expert SEO services. Our traffic and sales have skyrocketed!",
-        name: "Alice Johnson",
-        title: "CEO, Tech Solutions"
-    },
-    {
-        quote: "The team at DJS Compute is fantastic! Their web development skills brought our vision to life, and their AI solutions are top-notch.",
-        name: "Bob Smith",
-        title: "Founder, InnovateX"
-    }]
+    const marqueeItems = [
+        {
+            quote: "DJS Compute built our SVKM Hall Tracker — a dependable attendance and room-management system. Their team reduced manual check-ins by over 80% and delivered a polished, easy-to-use admin dashboard. They were responsive during rollout and provided excellent post-launch support.",
+            name: "",
+            title: "Operations Manager, SVKM Hall"
+        },
+        {
+            quote: "Working with DJS Compute accelerated our product development. They helped Recrutr ship a realtime candidate-matching dashboard that improved recruiter efficiency and reliably handled our traffic spikes.",
+            name: "Amit Desai",
+            title: "CTO, Recrutr"
+        },
+        {
+            quote: "The team provided hands-on guidance and shipped production-ready ML pipelines that scaled for Scholr's student base. Their pragmatic engineering and clear documentation made it easy for our team to take ownership.",
+            name: "Megha Rao",
+            title: "Co-founder, Scholr"
+        }
+    ]
 
     return (
         <section style={{
@@ -48,9 +55,11 @@ export function TrustedBySection() {
                     <h2 className="text-4xl md:text-5xl font-bold"><span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Trusted </span><span className="text-white">by</span></h2>
                 </div>
 
-                {/* Infinite scrolling marquee */}
-                <div className="mb-16">
-                    <InfiniteMovingCards items={marqueeItems} direction="right" speed="fast" pauseOnHover={true} />
+                {/* Infinite scrolling marquee - centered within a constrained container */}
+                <div className="mb-16 flex justify-center">
+                    <div className="w-full max-w-4xl">
+                        <InfiniteMovingCards items={marqueeItems} direction="right" speed="fast" pauseOnHover={true} />
+                    </div>
                 </div>
 
                 {/* Why choose us section */}
