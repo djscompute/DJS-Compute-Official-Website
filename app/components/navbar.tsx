@@ -94,7 +94,7 @@ export function Navbar() {
             >
               {/* icon + text with Jolly Lodger font */}
               <Image
-                src="/xpboost/pumpkin.png"
+                src="/xpboost/pumpkin.svg"
                 alt="XP Boost"
                 width={24}
                 height={24}
